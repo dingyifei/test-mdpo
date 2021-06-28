@@ -14,6 +14,9 @@ jobs:
     - name: run update_locales.sh
       run: ./scripts/update_locales.sh
 
+    - name: cat
+      run: cat /home/runner/work/test-mdpo/test-mdpo/README.md
+      
     - name: test
       run: md2po /home/runner/work/test-mdpo/test-mdpo/README.md --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -c -s --po-filepath /home/runner/work/test-mdpo/test-mdpo/readme.po
 
