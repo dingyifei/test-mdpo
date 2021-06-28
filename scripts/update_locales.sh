@@ -23,13 +23,13 @@ for dir in docs/locales/*/; do
     #to pofile
     targetmdfile=docs/locales/$dir/$mdfile #Add target directory to mdfile
     echo "Converting $mdfile to $pofile"
-    command="md2po ${PWD}$mdfilepath --md-encoding utf-8 --po-encoding utf-8 \
-    -e utf-8 -w $width -q -s -c --po-filepath ${PWD}$pofilepath"
+    command="md2po ${PWD}/$mdfilepath --md-encoding utf-8 --po-encoding utf-8 \
+    -e utf-8 -w $width -q -s -c --po-filepath ${PWD}/$pofilepath"
     echo "$command"
     $($command)
     echo "Converting $pofile to $mdfile"
-    command="po2md ${PWD}$mdfilepath --md-encoding utf-8 --po-encoding utf-8 \
-    -p ${PWD}$pofilepath -q -s ${PWD}$targetmdfile"
+    command="po2md ${PWD}/$mdfilepath --md-encoding utf-8 --po-encoding utf-8 \
+    -p ${PWD}/$pofilepath -q -s ${PWD}/$targetmdfile"
     echo "$command"
     $($command)
   done
