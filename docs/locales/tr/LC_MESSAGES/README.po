@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 
-msgid ""
-"Welcome to the Klipper documentation. The [overview "
-"document](Overview.md) is a good starting point."
-msgstr ""
+#~ msgid ""
+#~ "Welcome to the Klipper documentation. The [overview "
+#~ "document](Overview.md) is a good starting point."
+#~ msgstr ""
