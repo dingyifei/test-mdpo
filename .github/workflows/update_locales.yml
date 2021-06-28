@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: run update_locales.sh
-      run: ./scripts/update_locales.sh
+      run: sudo ./scripts/update_locales.sh
     - name: test
       run: md2po ./readme.md --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -w $width -q -s -c --po-filepath ./readme.po
     - uses: stefanzweifel/git-auto-commit-action@v4
