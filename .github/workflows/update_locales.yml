@@ -19,6 +19,10 @@ jobs:
 
     - name: test
       run: md2po "/home/runner/work/test-mdpo/test-mdpo/README.md" --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -c -s --po-filepath "/home/runner/work/test-mdpo/test-mdpo/readme.po"
+    - name: test2
+      run: md2po "./README.md" -c -s --po-filepath "./readme2.po"
+    - name: test3
+      run: md2po "/home/runner/work/test-mdpo/test-mdpo/README.md" -e utf-8 -c -s --po-filepath "/home/runner/work/test-mdpo/test-mdpo/readme3.po"
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
