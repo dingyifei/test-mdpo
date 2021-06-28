@@ -15,7 +15,7 @@ jobs:
       run: ./scripts/update_locales.sh
 
     - name: test
-      run: md2po /home/runner/work/test-mdpo/test-mdpo/readme.md --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -c -s --po-filepath /home/runner/work/test-mdpo/test-mdpo/readme.po
+      run: md2po /home/runner/work/test-mdpo/test-mdpo/README.md --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -c -s --po-filepath /home/runner/work/test-mdpo/test-mdpo/readme.po
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
