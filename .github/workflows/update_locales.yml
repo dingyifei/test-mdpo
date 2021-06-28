@@ -6,16 +6,20 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: add permission
       run: chmod +x scripts/update_locales.sh
+
     - name: run update_locales.sh
       run: ./scripts/update_locales.sh
+
     - name: test
       run: md2po ./readme.md --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -q -s -c --po-filepath ./readme.po
+
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "locales: Automatic Update"
