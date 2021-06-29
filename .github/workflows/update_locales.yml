@@ -6,13 +6,13 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
 
     - name: run update_locales.sh
-      run: ./scripts/update_locales.sh
+      run: bash ./scripts/update_locales.sh
       
     - name: test3
       run: md2po "./README.md" -c -s --po-filepath "./readme2.po"
