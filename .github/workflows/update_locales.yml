@@ -6,23 +6,16 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: macos-11
 
     steps:
     - uses: actions/checkout@v2
 
     - name: run update_locales.sh
       run: ./scripts/update_locales.sh
-
-    - name: cat
-      run: cat /home/runner/work/test-mdpo/test-mdpo/README.md
-
-    - name: test
-      run: md2po "/home/runner/work/test-mdpo/test-mdpo/README.md" --md-encoding utf-8 --po-encoding utf-8 -e utf-8 -c -s --po-filepath "/home/runner/work/test-mdpo/test-mdpo/readme.po"
-    - name: test2
-      run: md2po "./README.md" -c -s --po-filepath "./readme2.po"
+      
     - name: test3
-      run: md2po "/home/runner/work/test-mdpo/test-mdpo/README.md" -e utf-8 -c -s --po-filepath "/home/runner/work/test-mdpo/test-mdpo/readme3.po"
+      run: md2po "./README.md" -c -s --po-filepath "./readme2.po"
     - name: test4
       run: python -c "import os;print(os.path.exists('readme.po'));"
     - uses: stefanzweifel/git-auto-commit-action@v4
