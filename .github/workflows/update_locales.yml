@@ -12,9 +12,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install MDPO
       run: pip install mdpo
+    - name: generate file
+      run: touch a.md
+    - name: Insert Text
+      run: echo "helloworld" >> a.md
     - name: test1
-      run: md2po ./README.md
+      run: md2po ./a.md
     - name: test2
-      run: python -c "import os;print(os.path.exists('readme.po'));"
+      run: python -c "import os;print(os.path.exists('a.md'));"
     - name: test3
-      run: cat ./README.md
+      run: cat ./a.md
