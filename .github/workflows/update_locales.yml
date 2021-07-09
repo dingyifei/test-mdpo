@@ -18,6 +18,3 @@ jobs:
       run: python -c "import os;print(os.path.exists('readme.po'));"
     - name: test3
       run: cat ./README.md
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: "locales: Automatic Update"
