@@ -21,4 +21,4 @@ jobs:
     - name: test2
       run: python -c "import os;print(os.path.exists('a.md'));"
     - name: test3
-      run: cat ./a.md
+      run: cat ./a.md | md2po
