@@ -10,14 +10,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: run update_locales.sh
-      run: bash ./scripts/update_locales.sh
-      
-    - name: test3
-      run: md2po "./README.md" -c -s --po-filepath "./readme2.po"
-    - name: test4
+    - name: Install MDPO
+      run: pip install mdpo
+    - name: test1
+      run: md2po "./README.md" -c -s --po-filepath "./readme1.po"
+    - name: test2
       run: python -c "import os;print(os.path.exists('readme.po'));"
+    - name: test3
+      run: cat ./README.md > md2po -c -s --po-filepath "./readme2.po"
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "locales: Automatic Update"
