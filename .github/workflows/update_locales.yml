@@ -25,4 +25,4 @@ jobs:
     - name: test4
       run: cat ./a.md | md2po -s --po-filepath a.po && cat ./a.md | po2md -p a.po
     - name: test5
-      run: cat ./a.md | md2po -s a.po && po2md a.md -p a.po
+      run: cat ./a.md | md2po -s --po-filepath a.po && po2md a.md -p a.po
